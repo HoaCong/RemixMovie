@@ -6,17 +6,16 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from 'remix';
-import type { MetaFunction } from 'remix';
-import styles from './tailwind.css';
-
+} from "remix";
+import type { MetaFunction } from "remix";
+import styles from "./tailwind.css";
 
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: styles }];
-}
+  return [{ rel: "stylesheet", href: styles }];
+};
 
 export const meta: MetaFunction = () => {
-  return { title: 'Studio Ghibli', description: 'A description' };
+  return { title: "Remix movie", description: "A description" };
 };
 
 export default function App() {
@@ -32,13 +31,13 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === 'development' && <LiveReload />}
+        {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
   );
 }
 
-export function ErrorBoundary({ error }) {
+export function ErrorBoundary({ error }: any) {
   console.error(error);
   return (
     <html>
